@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>Contact Form</h1>
+<div class="content">
+    <form action="/contact" name="contactus" id="contactus" method="post">
+        <fieldset>
+            <p>
+                <label for="name">Name:</label><br/>
+                <input name="name" type="text" value="" id="name"/>
+            </p>
+            <p>
+                <label for="email">Email:</label><br/>
+                <input name="email" type="text" value="" id="email"/>
+            </p>
+            <p>
+                <label for="message">Message:</label><br/>
+                <textarea name="message" cols="40" rows="10" id="message"></textarea>
+            </p>
+            <p>
+                <input name="submit" type="submit" value="Send" id="submit"/>
+            </p>
+        </fieldset>
+    </form>
+    <%if (msg !== ' ')%>
+    <%{%>
+    <div>
+    <%=msg%>
+    </div>
+    <%}%>
+
+</div>
+</body>
+</html>
