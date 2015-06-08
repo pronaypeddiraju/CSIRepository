@@ -1,0 +1,64 @@
+{
+  "name": "Tech Question Bank",
+  "question": [
+    { "q_id": 1,
+      "q_type": "MCQ",
+      "title": "Q-1",
+      "option": [
+        "OP-1",
+        "OP-2",
+        "OP-3",
+        "OP-4"
+      ]
+    },
+    { "q_id": 2,
+      "q_type": "MCQ",
+      "title": "Q-2",
+      "option": [
+        "OP-1",
+        "OP-2",
+        "OP-3",
+        "OP-4"
+      ]
+    },
+    { "q_id": 3,
+      "q_type": "MCQ",
+      "title": "Q-3",
+      "option": [
+        "OP-1",
+        "OP-2",
+        "OP-3",
+        "OP-4"
+      ]
+    },
+    { "q_id": 4,
+      "q_type": "MCQ",
+      "title": "Q-4",
+      "option": [
+        "OP-1",
+        "OP-2",
+        "OP-3",
+        "OP-4"
+      ]
+    },
+    { "q_id": 5,
+      "q_type": "MCQ",
+      "title": "Q-5",
+      "option": [
+        "OP-1",
+        "OP-2",
+        "OP-3",
+        "OP-4"
+      ]
+    },
+    { "q_id": 6,
+      "q_type": "Image",
+      "title": "Q-6",
+      "src": "/image12.png"
+    },
+    { "q_id": 7,
+      "q_type": "Sub",
+      "title": "Q-7"
+    }
+  ]
+}

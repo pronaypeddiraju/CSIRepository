@@ -5,8 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var routes = require('./routes/index');
 var contact = require('./routes/contact');
+var submit = require('./routes/submit');
+var quiz = require('./routes/quiz');
+var session = require('express-session')
 
 var app = express();
 
@@ -20,22 +24,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({secret: '1234567890QWERTY',
+        saveUninitialized: true,
+        resave: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/contact',contact);
+app.use('/submit',submit);
+app.use('/quiz',quiz);
 
-app.get('/papers/tech', function(req, res) {
-    res.sendfile('./papers//tech.pdf');
-});
-
-app.get('/papers/mang', function(req, res) {
-    res.sendfile('./papers//mang.pdf');
-});
-
-app.get('/papers/crea', function(req, res) {
-    res.sendfile('./papers//crea.pdf');
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

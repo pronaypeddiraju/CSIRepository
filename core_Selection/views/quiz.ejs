@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= title %></title>
+<link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body>
+
+<form action="/quiz" method="post">
+
+    <h1><%= title %></h1>
+
+
+   <%for(var i=0;i<7;i++){%>
+    <fieldset>
+        <legend><span class="number"><%= i+1%></span><%= question.question[i].title %></legend>
+        <%if (question.question[i].q_type === "MCQ") { %>
+        <%for(var j=0; j<4;j++){ %>
+            <label for="<%= question.question[i].title %>-op<%= j %>"><%= question.question[i].option[j]%></label>
+            <input type="radio" name="answer" value="<%= question.question[i].option[j]%>" id="<%= question.question[i].title %>-op<%= j %>"/>
+            <% } }%>
+        <%if(question.question[i].q_type === "Image"){%>
+            <img src=images<%= question.question[i].src%>>
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" name="answer">
+        <%}%>
+        <%if(question.question[i].q_type === "Sub"){%>
+
+        <label for="answer">Answer:</label>
+        <input type="text" id="answer" name="answer">
+        <%}%>
+        </fieldset>
+    <% } %>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

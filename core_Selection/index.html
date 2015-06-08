@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chatting</title>
+</head>
+
+<body>
+
+<h1 id="timer">
+	300
+</h1>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	jQuery(function($){
+		var socket = io.connect();
+		var $timer = $('#timer');
+		setInterval(socket.emit('timer',$timer.val()),
+		 1000);
+		});
+</script>
+
+</body>
+
+</html>
